@@ -1,0 +1,508 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 13,
+    "passes": 10,
+    "pending": 1,
+    "failures": 2,
+    "testsRegistered": 13,
+    "passPercent": 76.92307692307692,
+    "pendingPercent": 7.6923076923076925,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2025-08-06T09:29:22.149Z",
+    "end": "2025-08-06T09:32:46.966Z",
+    "duration": 204817
+  },
+  "results": [
+    {
+      "uuid": "824aa372-538a-4c79-acbd-ce1f1304dbe1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\dsa\\referrers\\create.js",
+      "file": "cypress\\e2e\\dsa\\referrers\\create.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fad2bd20-8cdd-4c6f-afe6-199c302904b0",
+          "title": "Nevigate to the referrers asset",
+          "fullFile": "cypress\\e2e\\dsa\\referrers\\create.js",
+          "file": "cypress\\e2e\\dsa\\referrers\\create.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "create referrer",
+              "fullTitle": "Nevigate to the referrers asset create referrer",
+              "timedOut": null,
+              "duration": 9608,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wait(\"@appAuth\", {\n  timeout: 10000\n}).then(({\n  response\n}) => {\n  userRole = response.body.result.user.role;\n  if (userRole === \"std\") {\n    (void 0).skip();\n  }\n  ;\n  cyGet('[data-testid=\"Create Referrer\"]').click();\n  cy.wait(\"@getfieldOnForm\", {\n    timeout: 10000\n  }).then(({\n    response\n  }) => {\n    var _response$body;\n    const fieldConfig = (response === null || response === void 0 || (_response$body = response.body) === null || _response$body === void 0 || (_response$body = _response$body.result) === null || _response$body === void 0 ? void 0 : _response$body.values) || [];\n    propwiseFields(fieldConfig);\n    cyGet('[data-testid=\"Create\"]').click();\n  });\n});",
+              "err": {},
+              "uuid": "469ce18a-fd5c-4fa5-88f0-d23cd422fdff",
+              "parentUUID": "fad2bd20-8cdd-4c6f-afe6-199c302904b0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "469ce18a-fd5c-4fa5-88f0-d23cd422fdff"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9608,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "19d1d723-fbe8-45be-9851-06ab3ac24763",
+      "title": "",
+      "fullFile": "cypress\\e2e\\dsa\\partnerBanks\\create.js",
+      "file": "cypress\\e2e\\dsa\\partnerBanks\\create.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9757b8b1-0f20-4d05-8c0e-eb8e77e74d55",
+          "title": "Nevigate to the partner bank asset",
+          "fullFile": "cypress\\e2e\\dsa\\partnerBanks\\create.js",
+          "file": "cypress\\e2e\\dsa\\partnerBanks\\create.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add partner bank",
+              "fullTitle": "Nevigate to the partner bank asset Add partner bank",
+              "timedOut": null,
+              "duration": 12556,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wait(\"@appAuth\", {\n  timeout: 10000\n}).then(({\n  response\n}) => {\n  userRole = response.body.result.user.role;\n  if (userRole === \"std\") {\n    (void 0).skip();\n  }\n  ;\n  cy.log(JSON.stringify(userRole));\n  cyGet('[data-testid=\"Create Partner Bank\"]').click();\n  cy.wait(\"@getfieldOnForm\", {\n    timeout: 10000\n  }).then(({\n    response\n  }) => {\n    var _response$body;\n    const fieldConfig = (response === null || response === void 0 || (_response$body = response.body) === null || _response$body === void 0 || (_response$body = _response$body.result) === null || _response$body === void 0 ? void 0 : _response$body.values) || [];\n    propwiseFields(fieldConfig);\n    cyGet('[data-testid=\"Create\"]').click();\n  });\n});",
+              "err": {},
+              "uuid": "e77ab5b3-6ce6-40bb-90dd-fecac0aa3573",
+              "parentUUID": "9757b8b1-0f20-4d05-8c0e-eb8e77e74d55",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e77ab5b3-6ce6-40bb-90dd-fecac0aa3573"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12556,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "e81ae836-9cd5-4b05-bd70-cecc4f3721f0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\dsa\\loanEnquiry\\create.js",
+      "file": "cypress\\e2e\\dsa\\loanEnquiry\\create.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8bd56f28-f95d-43b8-bb3a-9318db532aba",
+          "title": "Nevigate to the Loan Enquiry",
+          "fullFile": "cypress\\e2e\\dsa\\loanEnquiry\\create.js",
+          "file": "cypress\\e2e\\dsa\\loanEnquiry\\create.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "create loan enquiry",
+              "fullTitle": "Nevigate to the Loan Enquiry create loan enquiry",
+              "timedOut": null,
+              "duration": 24731,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wait(\"@appAuth\", {\n  timeout: 10000\n}).then(({\n  response\n}) => {\n  userRole = response.body.result.user.role;\n  if (userRole === \"std\") {\n    (void 0).skip();\n  }\n  ;\n  cy.log(JSON.stringify(userRole));\n  cy.get('[data-testid=\"Create Loan Enquiry\"]').click();\n  cy.wait(\"@getfieldOnForm\", {\n    timeout: 10000\n  }).then(({\n    response\n  }) => {\n    var _response$body;\n    const fieldConfig = (response === null || response === void 0 || (_response$body = response.body) === null || _response$body === void 0 || (_response$body = _response$body.result) === null || _response$body === void 0 ? void 0 : _response$body.values) || [];\n    propwiseFields(fieldConfig);\n    cy.get('[data-testid=\"Create\"]').click();\n  });\n});",
+              "err": {},
+              "uuid": "2a9442c7-ac25-472a-8a6e-047dcbc9536a",
+              "parentUUID": "8bd56f28-f95d-43b8-bb3a-9318db532aba",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fill personal information",
+              "fullTitle": "Nevigate to the Loan Enquiry Fill personal information",
+              "timedOut": null,
+              "duration": 9215,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cyGet('[data-testid=\"buelementgroup-box-n1f8dc7ag\"]').find('[aria-label=\"Grid view\"] button').click();\ncy.wait(\"@recordsGrid\", {\n  timeout: 10000\n}).then(({\n  response\n}) => {\n  const uidField = response.body.result.view.columns.find(fld => fld.prop === \"uid\");\n  const loanEnquiryId = response.body.result.values[0][uidField.id];\n  const recordId = response.body.result.values[0].id;\n  cy.contains(`tr`, loanEnquiryId).find(`td`).contains(loanEnquiryId).click({\n    force: true\n  });\n  cy.wait(\"@getBiztab\", {\n    timeout: 10000\n  }).then(({\n    response\n  }) => {\n    const piField = response.body.result.find(fld => fld.label === \"Personal Information\");\n    cy.intercept(\"GET\", `**/rms/records/${recordId}?module=dsa&asset=loan_enquiry&catId=681c4fcf8428f38032e71227&fieldGroup=${piField.id}`).as(\"piFieldGroup\");\n    if (!piField) {\n      (void 0).skip();\n    }\n    cyGet(`[aria-label=\"Simple Tab\"] [aria-label=\"${piField === null || piField === void 0 ? void 0 : piField.label}\"]`).should(\"contain.text\", piField === null || piField === void 0 ? void 0 : piField.label).click();\n    cy.wait(\"@piFieldGroup\", {\n      timeout: 10000\n    }).then(({\n      response\n    }) => {\n      var _response$body2;\n      const recordProfile = (response === null || response === void 0 || (_response$body2 = response.body) === null || _response$body2 === void 0 || (_response$body2 = _response$body2.result) === null || _response$body2 === void 0 ? void 0 : _response$body2.profile) || [];\n      propwiseFields(recordProfile);\n      cyGet(`[data-testid=\"Save tab form\"]`).click();\n    });\n  });\n});",
+              "err": {},
+              "uuid": "f0a474a2-b49b-4ae6-a6d4-075aab8739f1",
+              "parentUUID": "8bd56f28-f95d-43b8-bb3a-9318db532aba",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fill income detail",
+              "fullTitle": "Nevigate to the Loan Enquiry Fill income detail",
+              "timedOut": null,
+              "duration": 10970,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(1920, 1200);\ncyGet('[data-testid=\"buelementgroup-box-n1f8dc7ag\"]').find('[aria-label=\"Grid view\"] button').click();\ncy.wait(\"@recordsGrid\", {\n  timeout: 10000\n}).then(({\n  response\n}) => {\n  const uidField = response.body.result.view.columns.find(fld => fld.prop === \"uid\");\n  const loanEnquiryId = response.body.result.values[0][uidField.id];\n  const recordId = response.body.result.values[0].id;\n  cy.contains(`tr`, loanEnquiryId).find(`td`).contains(loanEnquiryId).click({\n    force: true\n  });\n  cy.wait(\"@getBiztab\", {\n    timeout: 10000\n  }).then(({\n    response\n  }) => {\n    const incomeField = response.body.result.find(fld => fld.label === \"Income Details\");\n    cy.intercept(\"GET\", `**/rms/records/${recordId}?module=dsa&asset=loan_enquiry&catId=681c4fcf8428f38032e71227&fieldGroup=${incomeField.id}`).as(\"incomeFieldFieldGroup\");\n    if (!incomeField) {\n      (void 0).skip();\n    }\n    cyGet(`[aria-label=\"Simple Tab\"] [aria-label=\"${incomeField === null || incomeField === void 0 ? void 0 : incomeField.label}\"]`).should(\"contain.text\", incomeField === null || incomeField === void 0 ? void 0 : incomeField.label).click();\n    cy.wait(\"@incomeFieldFieldGroup\", {\n      timeout: 10000\n    }).then(({\n      response\n    }) => {\n      var _response$body3;\n      const recordProfile = response === null || response === void 0 || (_response$body3 = response.body) === null || _response$body3 === void 0 || (_response$body3 = _response$body3.result) === null || _response$body3 === void 0 ? void 0 : _response$body3.profile.slice(0, 11);\n      propwiseFields(recordProfile);\n      cyGet(`[data-testid=\"Save tab form\"]`).click();\n    });\n  });\n});",
+              "err": {},
+              "uuid": "1feecc43-d76b-450a-942e-91938ec59da5",
+              "parentUUID": "8bd56f28-f95d-43b8-bb3a-9318db532aba",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fill previous loan",
+              "fullTitle": "Nevigate to the Loan Enquiry Fill previous loan",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cyGet('[data-testid=\"buelementgroup-box-n1f8dc7ag\"]').find('[aria-label=\"Grid view\"] button').click();\ncy.wait(\"@recordsGrid\", {\n  timeout: 10000\n}).then(({\n  response\n}) => {\n  const uidField = response.body.result.view.columns.find(fld => fld.prop === \"uid\");\n  const loanEnquiryId = response.body.result.values[0][uidField.id];\n  const recordId = response.body.result.values[0].id;\n  cy.contains(`tr`, loanEnquiryId).find(`td`).contains(loanEnquiryId).click({\n    force: true\n  });\n  cy.wait(\"@getBiztab\", {\n    timeout: 10000\n  }).then(({\n    response\n  }) => {\n    const plField = response.body.result.find(fld => fld.label === \"Previous Loan\");\n    cy.intercept(\"GET\", `**/rms/records/${recordId}?module=dsa&asset=loan_enquiry&catId=681c4fcf8428f38032e71227&fieldGroup=${plField.id}`).as(\"plFieldFieldGroup\");\n    if (!plField) {\n      (void 0).skip();\n    }\n    cyGet(`[aria-label=\"Simple Tab\"] [aria-label=\"${plField === null || plField === void 0 ? void 0 : plField.label}\"]`).should(\"contain.text\", plField === null || plField === void 0 ? void 0 : plField.label).click();\n    cy.wait(\"@plFieldFieldGroup\", {\n      timeout: 10000\n    }).then(({\n      response\n    }) => {\n      var _response$body4;\n      const recordProfile = (response === null || response === void 0 || (_response$body4 = response.body) === null || _response$body4 === void 0 || (_response$body4 = _response$body4.result) === null || _response$body4 === void 0 ? void 0 : _response$body4.profile) || [];\n      propwiseFields(recordProfile);\n      cyGet(`[data-testid=\"Save tab form\"]`).click();\n    });\n  });\n});",
+              "err": {},
+              "uuid": "f460b8e5-47c5-4e51-b3a8-357c4dd95622",
+              "parentUUID": "8bd56f28-f95d-43b8-bb3a-9318db532aba",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "upload required documents",
+              "fullTitle": "Nevigate to the Loan Enquiry upload required documents",
+              "timedOut": null,
+              "duration": 34813,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cyGet('[data-testid=\"buelementgroup-box-n1f8dc7ag\"]').find('[aria-label=\"Grid view\"] button').click();\ncy.wait(\"@recordsGrid\", {\n  timeout: 10000\n}).then(({\n  response\n}) => {\n  const uidField = response.body.result.view.columns.find(fld => fld.prop === \"uid\");\n  const loanEnquiryId = response.body.result.values[0][uidField.id];\n  const recordId = response.body.result.values[0].id;\n  cy.contains(`tr`, loanEnquiryId).find(`td`).contains(loanEnquiryId).click({\n    force: true\n  });\n  cy.wait(\"@getBiztab\", {\n    timeout: 10000\n  }).then(({\n    response\n  }) => {\n    const drField = response.body.result.find(fld => fld.label === \"Document Required\");\n    cy.intercept(\"GET\", `**/rms/records/${recordId}?module=dsa&asset=loan_enquiry&catId=681c4fcf8428f38032e71227&fieldGroup=${drField.id}`).as(\"drFieldFieldGroup\");\n    if (!drField) {\n      (void 0).skip();\n    }\n    cyGet(`[aria-label=\"Simple Tab\"] [aria-label=\"${drField === null || drField === void 0 ? void 0 : drField.label}\"]`).should(\"contain.text\", drField === null || drField === void 0 ? void 0 : drField.label).click();\n    cy.wait(\"@drFieldFieldGroup\", {\n      timeout: 10000\n    }).then(({\n      response\n    }) => {\n      var _response$body5;\n      const allFields = (response === null || response === void 0 || (_response$body5 = response.body) === null || _response$body5 === void 0 || (_response$body5 = _response$body5.result) === null || _response$body5 === void 0 ? void 0 : _response$body5.profile) || [];\n      const customiseLoanFields = getRequiredFieldsByLoanType(allFields, 'Personal Loan');\n      propwiseFields(customiseLoanFields);\n      cyGet(`[data-testid=\"Save tab form\"]`).click();\n    });\n  });\n});",
+              "err": {},
+              "uuid": "e45495f6-bdd2-4bf1-a011-ecbd37b0f361",
+              "parentUUID": "8bd56f28-f95d-43b8-bb3a-9318db532aba",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2a9442c7-ac25-472a-8a6e-047dcbc9536a",
+            "f0a474a2-b49b-4ae6-a6d4-075aab8739f1",
+            "1feecc43-d76b-450a-942e-91938ec59da5",
+            "e45495f6-bdd2-4bf1-a011-ecbd37b0f361"
+          ],
+          "failures": [],
+          "pending": [
+            "f460b8e5-47c5-4e51-b3a8-357c4dd95622"
+          ],
+          "skipped": [],
+          "duration": 79729,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "74aa46bc-9eb6-4ed4-bf2c-85757a44a589",
+      "title": "",
+      "fullFile": "cypress\\e2e\\dsa\\loanEnquiry\\edit.js",
+      "file": "cypress\\e2e\\dsa\\loanEnquiry\\edit.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e1a18ac9-c9d1-457f-9a1c-17497cedacd1",
+          "title": "Nevigate to the Loan Enquiry",
+          "fullFile": "cypress\\e2e\\dsa\\loanEnquiry\\edit.js",
+          "file": "cypress\\e2e\\dsa\\loanEnquiry\\edit.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Edit stage - Application Sumbited",
+              "fullTitle": "Nevigate to the Loan Enquiry Edit stage - Application Sumbited",
+              "timedOut": null,
+              "duration": 10513,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(`${updatedUrl}/loan_enquiries`);\ncyGet('[data-testid=\"buelementgroup-box-n1f8dc7ag\"]').find('[aria-label=\"Grid view\"] button').click();\ncy.wait(\"@recordsGrid\", {\n  timeout: 10000\n}).then(({\n  response\n}) => {\n  const uidField = response.body.result.view.columns.find(fld => fld.prop === \"uid\");\n  loanEnquiryId = response.body.result.values[0][uidField.id];\n  const recordId = response.body.result.values[0].id;\n  cy.intercept(\"GET\", `**/rms/records/${recordId}?*`).as(\"getRecord\");\n  cy.contains(`tr`, loanEnquiryId).find(`td`).contains(loanEnquiryId).click({\n    force: true\n  });\n  fieldOnForm(`#detail-form [data-testid=\"budropdown-box-ty1opau5a\"] label`, \"Stage\", \"input\").click();\n  buSearchbox(globalSel.search, \"Application Submitted\");\n  budropdownOption(\"Application Submitted\", `[data-testid=\"buchip-chip-5r51zm55o\"]`).click();\n  buSaveButton().click();\n});",
+              "err": {},
+              "uuid": "8646a4ef-fc57-40ae-82ce-830803a4cc59",
+              "parentUUID": "e1a18ac9-c9d1-457f-9a1c-17497cedacd1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Confirm that the loan enquiry moved to the Loan Request after application submitted.",
+              "fullTitle": "Nevigate to the Loan Enquiry Confirm that the loan enquiry moved to the Loan Request after application submitted.",
+              "timedOut": null,
+              "duration": 3061,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(`${updatedUrl}/loan_requests`);\ncyGet('[data-testid=\"buelementgroup-box-n1f8dc7ag\"]').find('[aria-label=\"Grid view\"] button').click();\ncy.wait(\"@recordsGrid\", {\n  timeout: 10000\n}).then(({\n  response\n}) => {\n  // const uidField = response.body.result.view.columns.find(fld => fld.prop === \"uid\")\n  // const loanEnquiryId = response.body.result.values[0][uidField.id];\n  const enquiryAscField = response.body.result.view.columns.find(fld => fld.label === \"Enquiry Association\");\n  const enquiryAscValue = response.body.result.values[0][enquiryAscField.id];\n  fetchOptions(enquiryAscValue).then(res => {\n    res.forEach(ele => {\n      expect(ele).has.property(\"label\", loanEnquiryId);\n    });\n  });\n});",
+              "err": {
+                "message": "AssertionError: expected { Object (id, label) } to have property 'label' of 'LE0011', but got 'LE0010'",
+                "estack": "AssertionError: expected { Object (id, label) } to have property 'label' of 'LE0011', but got 'LE0010'\n    at eval (webpack://bu-testing/./cypress/e2e/dsa/loanEnquiry/edit.js:51:36)\n    at Context.eval (webpack://bu-testing/./cypress/e2e/dsa/loanEnquiry/edit.js:50:20)",
+                "diff": "- 'LE0010'\n+ 'LE0011'\n"
+              },
+              "uuid": "8f4d713b-1a49-40c5-a597-5359c94b8078",
+              "parentUUID": "e1a18ac9-c9d1-457f-9a1c-17497cedacd1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8646a4ef-fc57-40ae-82ce-830803a4cc59"
+          ],
+          "failures": [
+            "8f4d713b-1a49-40c5-a597-5359c94b8078"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 13574,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "d6070aee-ad10-409a-9de7-21da403f2926",
+      "title": "",
+      "fullFile": "cypress\\e2e\\dsa\\loanRequest\\verifyEnquiry.js",
+      "file": "cypress\\e2e\\dsa\\loanRequest\\verifyEnquiry.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "453c7b6f-5c07-4b1c-8fb7-607ebf7bb9a4",
+          "title": "Nevigate to the Loan Request",
+          "fullFile": "cypress\\e2e\\dsa\\loanRequest\\verifyEnquiry.js",
+          "file": "cypress\\e2e\\dsa\\loanRequest\\verifyEnquiry.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Edit loan request",
+              "fullTitle": "Nevigate to the Loan Request Edit loan request",
+              "timedOut": null,
+              "duration": 26702,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(`${updatedUrl}/loan_requests`);\ncyGet('[data-testid=\"buelementgroup-box-n1f8dc7ag\"]').find('[aria-label=\"Grid view\"] button').click();\ncy.wait(\"@recordsGrid\", {\n  timeout: 10000\n}).then(({\n  response\n}) => {\n  const uidField = response.body.result.view.columns.find(fld => fld.prop === \"uid\");\n  loanRequestId = response.body.result.values[0][uidField.id];\n  recordId = response.body.result.values[0].id;\n  cy.intercept(\"GET\", `**/rms/records/${recordId}?*`).as(\"getRecord\");\n  cy.contains(`tr`, loanRequestId).find(`td`).contains(loanRequestId).click({\n    force: true\n  });\n  cy.wait(\"@getRecord\", {\n    timeout: 10000\n  }).then(({\n    response\n  }) => {\n    const fieldsONDetailPage = response.body.result.profile.filter(fld => fld.readOnly === false && fld.label !== \"Loan type\");\n    propwiseFields(fieldsONDetailPage);\n    buSaveButton().click();\n  });\n});",
+              "err": {},
+              "uuid": "6de24619-5ade-4f06-bd61-20a4d0b31a54",
+              "parentUUID": "453c7b6f-5c07-4b1c-8fb7-607ebf7bb9a4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Disbursement Details",
+              "fullTitle": "Nevigate to the Loan Request Disbursement Details",
+              "timedOut": null,
+              "duration": 14327,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(`${updatedUrl}/loan_requests`);\ncyGet('[data-testid=\"buelementgroup-box-n1f8dc7ag\"]').find('[aria-label=\"Grid view\"] button').click();\n// cy.wait(\"@recordsGrid\", { timeout: 10000 }).then(({ response }) => {\n//     const uidField = response.body.result.view.columns.find(fld => fld.prop === \"uid\")\n//     const loanreqId = response.body.result.values[0][uidField.id];\n//     const recordId = response.body.result.values[0].id;\ncy.contains(`tr`, loanRequestId).find(`td`).contains(loanRequestId).click({\n  force: true\n});\ncy.wait(\"@getBiztab\", {\n  timeout: 10000\n}).then(({\n  response\n}) => {\n  const ddField = response.body.result.find(fld => fld.label === \"Disbursement Details\");\n  cy.intercept(\"GET\", `**/rms/records/${recordId}?module=dsa&asset=loan_request&catId=681c5beac156d3875c09210f&fieldGroup=${ddField.id}`).as(\"ddFieldFieldGroup\");\n  if (!ddField) {\n    (void 0).skip();\n  }\n  cyGet(`[aria-label=\"Simple Tab\"] [aria-label=\"${ddField === null || ddField === void 0 ? void 0 : ddField.label}\"]`).should(\"contain.text\", ddField === null || ddField === void 0 ? void 0 : ddField.label).click();\n  cy.wait(\"@ddFieldFieldGroup\", {\n    timeout: 10000\n  }).then(({\n    response\n  }) => {\n    var _response$body;\n    const allFields = (response === null || response === void 0 || (_response$body = response.body) === null || _response$body === void 0 || (_response$body = _response$body.result) === null || _response$body === void 0 ? void 0 : _response$body.profile) || [];\n    // const customiseLoanFields = getRequiredFieldsByLoanType(allFields, 'Personal Loan');\n    propwiseFields(allFields);\n    cyGet(`[data-testid=\"Save tab form\"]`).click();\n  });\n});\n// });",
+              "err": {},
+              "uuid": "0f2d3cb3-9f2c-4851-863b-63ea47e78e1e",
+              "parentUUID": "453c7b6f-5c07-4b1c-8fb7-607ebf7bb9a4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit stage - Disbursed",
+              "fullTitle": "Nevigate to the Loan Request Edit stage - Disbursed",
+              "timedOut": null,
+              "duration": 5659,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(`${updatedUrl}/loan_requests`);\ncyGet('[data-testid=\"buelementgroup-box-n1f8dc7ag\"]').find('[aria-label=\"Grid view\"] button').click();\n// cy.wait(\"@recordsGrid\", { timeout: 10000 }).then(({ response }) => {\n//     const uidField = response.body.result.view.columns.find(fld => fld.prop === \"uid\")\n//     loanRequestId = response.body.result.values[0][uidField.id];\n//     const recordId = response.body.result.values[0].id;\ncy.intercept(\"GET\", `**/rms/records/${recordId}?*`).as(\"getRecord\");\ncy.contains(`tr`, loanRequestId).find(`td`).contains(loanRequestId).click({\n  force: true\n});\nfieldOnForm(`#detail-form [data-testid=\"budropdown-box-ty1opau5a\"] label`, \"Stage\", \"input\").click();\nbuSearchbox(globalSel.search, \"Disbursed\");\nbudropdownOption(\"Disbursed\", `[data-testid=\"buchip-chip-5r51zm55o\"]`).click();\nbuSaveButton().click();\n// });",
+              "err": {},
+              "uuid": "6a6bb524-d55b-4cf9-b55e-ded57c37c2e7",
+              "parentUUID": "453c7b6f-5c07-4b1c-8fb7-607ebf7bb9a4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Confirm that the loan request moved to the borrower after Disbursed.",
+              "fullTitle": "Nevigate to the Loan Request Confirm that the loan request moved to the borrower after Disbursed.",
+              "timedOut": null,
+              "duration": 2258,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(`${updatedUrl}/borrowers`);\ncyGet('[data-testid=\"buelementgroup-box-n1f8dc7ag\"]').find('[aria-label=\"Grid view\"] button').click();\ncy.wait(\"@recordsGrid\", {\n  timeout: 10000\n}).then(({\n  response\n}) => {\n  const uidField = response.body.result.view.columns.find(fld => fld.prop === \"uid\");\n  const borrowerId = response.body.result.values[0][uidField.id];\n  const recordId = response.body.result.values[0].id;\n  cy.contains(`tr`, borrowerId).find(`td`).contains(borrowerId).click({\n    force: true\n  });\n  cy.wait(\"@getBiztab\", {\n    timeout: 10000\n  }).then(({\n    response\n  }) => {\n    const loanReqAscField = response.body.result.find(fld => fld.label === \"Loan Request Association\");\n    cy.intercept(\"GET\", `**/rms/associations?page=1&rows=25&src=borrower&dest=${loanReqAscField.catId}&recordId=${recordId}`).as(\"loanReqAssociaction\");\n    // if (!ddField) { this.skip() }\n    cyGet(`[aria-label=\"Simple Tab\"] [aria-label=\"${loanReqAscField === null || loanReqAscField === void 0 ? void 0 : loanReqAscField.label}\"]`).should(\"contain.text\", loanReqAscField === null || loanReqAscField === void 0 ? void 0 : loanReqAscField.label).click();\n    cy.wait(\"@loanReqAssociaction\", {\n      timeout: 10000\n    }).then(({\n      response\n    }) => {\n      response.body.result.values.forEach(ele => {\n        expect(ele).has.property(\"title\", loanRequestId);\n      });\n    });\n  });\n});",
+              "err": {
+                "message": "TypeError: Cannot read properties of undefined (reading 'catId')",
+                "estack": "TypeError: Cannot read properties of undefined (reading 'catId')\n    at Context.eval (webpack://bu-testing/./cypress/e2e/dsa/loanRequest/verifyEnquiry.js:186:108)",
+                "diff": null
+              },
+              "uuid": "68f16bd2-c398-4b07-8c18-a11d4cf0749b",
+              "parentUUID": "453c7b6f-5c07-4b1c-8fb7-607ebf7bb9a4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6de24619-5ade-4f06-bd61-20a4d0b31a54",
+            "0f2d3cb3-9f2c-4851-863b-63ea47e78e1e",
+            "6a6bb524-d55b-4cf9-b55e-ded57c37c2e7"
+          ],
+          "failures": [
+            "68f16bd2-c398-4b07-8c18-a11d4cf0749b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 48946,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[datetime]",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "Buopso-UI-Report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "reportFilename": "[datetime]",
+        "timestamp": "isoDateTime",
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\.jsons",
+        "saveJson": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

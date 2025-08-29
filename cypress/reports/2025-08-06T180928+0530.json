@@ -1,0 +1,248 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2025-08-06T12:38:13.121Z",
+    "end": "2025-08-06T12:39:28.647Z",
+    "duration": 75526
+  },
+  "results": [
+    {
+      "uuid": "0d69ccdc-39c5-453f-a006-8d098c8cb692",
+      "title": "",
+      "fullFile": "cypress\\e2e\\buopso_form\\1_addForm.js",
+      "file": "cypress\\e2e\\buopso_form\\1_addForm.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fa264101-79d8-4080-bed0-dd56a134b13f",
+          "title": "Nevigate the lead page and Create Lead",
+          "fullFile": "cypress\\e2e\\buopso_form\\1_addForm.js",
+          "file": "cypress\\e2e\\buopso_form\\1_addForm.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Form",
+              "fullTitle": "Nevigate the lead page and Create Lead Add Form",
+              "timedOut": null,
+              "duration": 17891,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const strLabel = `Single line ${new Date().valueOf()}`;\nconst txaLabel = `Multi line ${new Date().valueOf()}`;\ncyGet('[data-testid=\"Add Form\"]').click();\ncyGet('[aria-label=\"Field type\"]').click();\nconst strDraggable = '[data-rbd-drag-handle-draggable-id=\"newField@str\"]';\nconst txaDraggable = '[data-rbd-drag-handle-draggable-id=\"newField@txa\"]';\nconst droppable = '[role=\"tabpanel\"] [data-rbd-droppable-id=\"new-container\"]';\n// Drag and Drop single line field\ncy.dragAndDrop(strDraggable, droppable);\nonesecondWait();\nlabelNplaceholder(strLabel, `Enter ${strLabel}`);\ncyGet(`[role=\"dialog\"] [data-testid=\"Save\"]`).click();\ntwosecondWait();\n// Drag and Drop multi line field\ncy.dragAndDrop(txaDraggable, droppable);\nonesecondWait();\nlabelNplaceholder(txaLabel, `Enter ${txaLabel}`);\ncyGet(`[role=\"dialog\"] [data-testid=\"Save\"]`).click();\ntwosecondWait();\n// save form\nbuSaveButton().click();",
+              "err": {},
+              "uuid": "f011630c-f1b0-4ec9-9225-eb7a5319ed46",
+              "parentUUID": "fa264101-79d8-4080-bed0-dd56a134b13f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f011630c-f1b0-4ec9-9225-eb7a5319ed46"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17891,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "98b93b42-2531-48df-b933-b2d835cb771b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\buopso_form\\2_editForm.js",
+      "file": "cypress\\e2e\\buopso_form\\2_editForm.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3ae3b7d6-1dee-4a52-a2c2-a43749b82fab",
+          "title": "Nevigate the form module and edit form",
+          "fullFile": "cypress\\e2e\\buopso_form\\2_editForm.js",
+          "file": "cypress\\e2e\\buopso_form\\2_editForm.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Edit Form",
+              "fullTitle": "Nevigate the form module and edit form Edit Form",
+              "timedOut": null,
+              "duration": 16581,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const basLabel = `Phone ${new Date().valueOf()}`;\nconst chkLabel = `Email ${new Date().valueOf()}`;\n// cyGet('[data-testid=\"Add Form\"]').click()\n// cyGet('[aria-label=\"Field type\"]').click()\nconst basDraggable = '[data-rbd-drag-handle-draggable-id=\"newField@phn\"]';\nconst chkDraggable = '[data-rbd-drag-handle-draggable-id=\"newField@eml\"]';\nconst droppable = '[role=\"tabpanel\"] [data-rbd-droppable-id=\"new-container\"]';\ncy.wait(\"@recordsGrid\", {\n  timeout: 10000\n}).then(({\n  response\n}) => {\n  const uidField = response.body.result.view.columns.find(fld => fld.prop === \"uid\");\n  const formId = response.body.result.values[0][uidField.id];\n  cy.contains('tr', formId).find(`[data-testid=\"Action\"]`).click();\n  cyGet(`#edit`).click();\n  cyGet('[aria-label=\"Field type\"]').click();\n  // Drag and Drop dropdown field\n  cy.dragAndDrop(basDraggable, droppable);\n  onesecondWait();\n  labelNplaceholder(basLabel, `Enter ${basLabel}`);\n  cyGet(`[role=\"dialog\"] [data-testid=\"Save\"]`).click();\n  twosecondWait();\n  // Drag and Drop checkbox field\n  cy.dragAndDrop(chkDraggable, droppable);\n  onesecondWait();\n  labelNplaceholder(chkLabel, `Enter ${chkLabel}`);\n  cyGet(`[role=\"dialog\"] [data-testid=\"Save\"]`).click();\n  twosecondWait();\n  // save form\n  buSaveButton().click();\n});",
+              "err": {},
+              "uuid": "13312f79-590b-4fee-a0eb-6e912327be19",
+              "parentUUID": "3ae3b7d6-1dee-4a52-a2c2-a43749b82fab",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "13312f79-590b-4fee-a0eb-6e912327be19"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16581,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "e18d62fe-c9f4-4223-ba51-5913e7965e62",
+      "title": "",
+      "fullFile": "cypress\\e2e\\buopso_form\\3_publish.js",
+      "file": "cypress\\e2e\\buopso_form\\3_publish.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "71c0d9bf-4479-4338-8892-682e85362fee",
+          "title": "Nevigate the lead page and Create Lead",
+          "fullFile": "cypress\\e2e\\buopso_form\\3_publish.js",
+          "file": "cypress\\e2e\\buopso_form\\3_publish.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Publish Form - public",
+              "fullTitle": "Nevigate the lead page and Create Lead Publish Form - public",
+              "timedOut": null,
+              "duration": 12783,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(`${updatedUrl}/${asset}s`);\ncy.wait(\"@appAuth\", {\n  timeout: 10000\n}).then(({\n  response\n}) => {\n  userRole = response.body.result.user.role;\n  if (userRole === \"std\") {\n    (void 0).skip();\n  }\n});\ncyGet('[data-testid=\"buelementgroup-box-n1f8dc7ag\"]').find('[aria-label=\"Grid view\"] button').click();\ncy.wait(1000);\ncy.wait(\"@recordsGrid\", {\n  timeout: 10000\n}).then(({\n  response\n}) => {\n  const uidField = response.body.result.view.columns.find(fld => fld.prop === \"uid\");\n  const formId = response.body.result.values[0][uidField.id];\n  cy.contains('tr', formId).find(`[data-testid=\"Action\"]`).click();\n  cyGet(`#Share`).click();\n  onesecondWait();\n  cyGet(`[role=\"dialog\"] #public`).click();\n  cyGet(`[aria-label=\"Link\"] `).click();\n  cy.get('textarea.Mui-readOnly').should('be.visible').invoke('val').then(text => {\n    cy.wrap(text).as(\"publicUrl\");\n  });\n  cy.get(\"@publicUrl\").then(sharedLink => {\n    cy.visit(sharedLink);\n    cyGet(`[data-testid=\"navbar-typography-vmho70mcp\"]`).should(\"contain.text\", \"Buopso Forms\");\n    cy.wait(\"@formShared\", {\n      timeout: 10000\n    }).then(({\n      response\n    }) => {\n      const fieldsOnForm = response.body.result.data.fields;\n      const containerFieldIds = response.body.result.data.form.containers.flatMap(c => c.fields).filter(f => !f.hidden).map(i => i.id);\n      fillForms(containerFieldIds, fieldsOnForm);\n      cyGet('[data-testid=\"Submit\"]').click();\n      cy.get('[data-testid=\"thankyou-typography-wijt6t6z8\"]').should(\"contain.text\", \"Thank You!\");\n      cy.get('[data-testid=\"thankyou-typography-3goz62tdb\"]').should(\"contain.text\", \"Your submission has been received.\");\n    });\n  });\n});",
+              "err": {},
+              "uuid": "24089b21-3372-4b4a-8e5a-cb20c83e03b5",
+              "parentUUID": "71c0d9bf-4479-4338-8892-682e85362fee",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Publish Form - private",
+              "fullTitle": "Nevigate the lead page and Create Lead Publish Form - private",
+              "timedOut": null,
+              "duration": 18241,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(`${updatedUrl}/${asset}s`);\ncy.wait(\"@appAuth\", {\n  timeout: 10000\n}).then(({\n  response\n}) => {\n  userRole = response.body.result.user.role;\n  if (userRole === \"std\") {\n    (void 0).skip();\n  }\n});\ncyGet('[data-testid=\"buelementgroup-box-n1f8dc7ag\"]').find('[aria-label=\"Grid view\"] button').click();\ncy.wait(1000);\ncy.wait(\"@recordsGrid\", {\n  timeout: 10000\n}).then(({\n  response\n}) => {\n  const uidField = response.body.result.view.columns.find(fld => fld.prop === \"uid\");\n  const nameField = response.body.result.view.columns.find(fld => fld.label === \"Name\");\n  const formId = response.body.result.values[0][uidField.id];\n  const formName = response.body.result.values[0][nameField.id];\n  cy.contains('tr', formId).find(`[data-testid=\"Action\"]`).click();\n  cyGet(`#Share`).click();\n  onesecondWait();\n  cyGet(`[role=\"dialog\"] #private`).click();\n  cyGet(`[role=\"dialog\"] #private`).click();\n  budropdownInput(`input`, ``);\n  cy.wait(\"@verifiedUser\").then(({\n    response\n  }) => {\n    const user = response.body.result.values.find(ele => ele.subLabel !== Cypress.env(\"email\"));\n    const totalUser = response.body.result.pages.totalRecords;\n    if (totalUser > 5) {\n      buSearchbox(globalSel.search, user.label);\n    }\n    budropdownOption(user.label).first().click();\n    budropdownInput(`input`, ``);\n    cyGet(`[data-testid=\"Send\"]`).click();\n    logout();\n    cy.login(user.subLabel);\n    cy.wait(\"@modules\").then(({\n      response\n    }) => {\n      const assignModule = response.body.result;\n      let updatedUrl1 = url.replace(\"one\", assignModule[0]);\n      cy.visit(`${updatedUrl1}/resources?p=form`);\n      cy.wait(\"@formCards\").then(({\n        response\n      }) => {\n        const formDeatail = response.body.result.values.find(ele => ele.label === formName);\n        cy.intercept(\"GET\", `**/fms/forms/${formDeatail.formId}?*`).as(\"formById\");\n        cyGet(`[data-testid=\"formcardview-grid-4udo31pps\"]`).first().contains(formName);\n        cyGet(`[data-testid=\"formcardview-grid-4udo31pps\"]`).first().find(`[data-testid=\"Fill-up Form\"]`).click();\n        cy.wait(`@formById`, {\n          timeout: 10000\n        }).then(({\n          response\n        }) => {\n          const fieldsOnForm = response.body.result.fields;\n          const containerFieldIds = response.body.result.form.containers.flatMap(c => c.fields).filter(f => !f.hidden).map(i => i.id);\n          fillForms(containerFieldIds, fieldsOnForm);\n          buSaveButton().click();\n        });\n      });\n    });\n  });\n});",
+              "err": {},
+              "uuid": "7b5d9192-82b7-4ab7-a220-45c10981815b",
+              "parentUUID": "71c0d9bf-4479-4338-8892-682e85362fee",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "24089b21-3372-4b4a-8e5a-cb20c83e03b5",
+            "7b5d9192-82b7-4ab7-a220-45c10981815b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 31024,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[datetime]",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "Buopso-UI-Report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "reportFilename": "[datetime]",
+        "timestamp": "isoDateTime",
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\.jsons",
+        "saveJson": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
